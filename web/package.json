@@ -1,0 +1,16 @@
+{
+  "name": "patient-registration-browser",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/demo.js --bundle --minify --format=esm --outfile=../public/assets/demo.js",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@vapi-ai/web": "2.7.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "@playwright/test": "1.63.0"
+  }
+}
