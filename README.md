@@ -160,7 +160,7 @@ If authentication is enabled, add `-H "Authorization: Bearer $API_AUTH_TOKEN"`.
 
 ## Testing
 
-Part 3 verification: **125 backend tests and 5 browser tests**, with **98% application
+Part 3 verification: **125 backend tests and 6 browser tests**, with **98% application
 coverage** on the backend suite. The
 optional disposable-PostgreSQL test is skipped unless configured. Part 1 also passed
 that test on PostgreSQL 18. The supplied Supabase project has migrations through
@@ -209,8 +209,11 @@ mkdir -p data
 npm test --prefix web
 ```
 
-Browser tests mock Vapi and consume no credits. GitHub Actions also checks the
-bundle is current and runs the browser tests. The current Starlette/AnyIO combination emits one upstream deprecation warning
+Five browser tests mock Vapi; one initializes the real SDK from the production
+bundle with external requests blocked. None place calls or consume credits.
+The GitHub Actions workflow checks the bundle and runs these tests, but GitHub
+currently refuses to start jobs because of an account billing lock. Local results
+remain verified; no paid settings were changed. The current Starlette/AnyIO combination emits one upstream deprecation warning
 about `BlockingPortal`; it does not affect test results.
 
 ## Voice integration

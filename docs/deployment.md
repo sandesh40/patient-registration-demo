@@ -79,3 +79,14 @@ blocks international access, document the actual result and use the PDF's stated
 vendor-issue fallback with these local setup instructions.
 
 Official hosting reference: [FastAPI on Vercel](https://vercel.com/docs/frameworks/backend/fastapi).
+
+## Account integration limits
+
+The repository is published, but GitHub Actions reported that jobs could not start
+because the GitHub account is locked by a billing issue. This is a runner startup
+restriction, not a reported test failure. The tests run locally without that service.
+No paid plan, credit purchase, or billing change was made.
+
+Vercel also denied automatic GitHub repository linking. Direct CLI deployments
+work and the current site is live. Until repository access is enabled in the
+Vercel/GitHub integration, deploy new revisions with the CLI commands above.

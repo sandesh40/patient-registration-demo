@@ -1,4 +1,8 @@
-import Vapi from '@vapi-ai/web';
+import VapiModule from '@vapi-ai/web';
+
+// The SDK publishes a CommonJS default export. Native ESM bundling can retain
+// that wrapper, so resolve the constructor for either supported module shape.
+const Vapi = typeof VapiModule === 'function' ? VapiModule : VapiModule.default;
 
 const start = document.querySelector('#start');
 const stop = document.querySelector('#stop');

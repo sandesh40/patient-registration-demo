@@ -60,7 +60,8 @@ bonuses are separated from required work. This document is updated at each stage
 - [x] Apply Gemini/Deepgram assistant configuration and authenticated tool URLs;
       verify saved settings and phone routing through Vapi's API.
 - [x] Add browser voice backup, call controls, microphone errors, and live captions;
-      document its difference from phone access. Five mocked browser tests pass.
+      document its difference from phone access. Five mocked browser tests plus
+      a real-SDK production-bundle startup test pass without placing a call.
 - [x] Confirm public health/readiness, assets/docs, authentication, and tool URLs;
       deployed synthetic prepare/confirm/retry/retrieve/soft-delete smoke test passes.
 - [ ] Complete a real phone registration and a second call; verify retained data.
@@ -68,7 +69,9 @@ bonuses are separated from required work. This document is updated at each stage
       and provide the runnable fallback permitted by the PDF.
 - [x] Automated edge cases: invalid DOB/phone, correction, start over, dropped call,
       DB failure, and cancellation during browser connection. Spoken tests remain above.
-- [ ] Push repository and supply reviewer access if private.
+- [x] Push the repository to the user's specified GitHub remote.
+- [ ] GitHub-hosted CI execution: jobs did not start because GitHub reports the
+      account is locked by a billing issue. Local tests pass; no paid changes made.
 - [x] README contains live phone number, API base URL, testing notes, and Next Steps.
 - [x] Prepare URLs and private reviewer bearer token in ignored, owner-readable
       `data/reviewer-access.txt`; public docs never contain the token.
