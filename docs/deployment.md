@@ -54,6 +54,12 @@ python scripts/configure_vercel.py --enable-browser
 vercel deploy --prod --yes --global-config data/vercel-auth
 ```
 
+These commands were verified with **Vercel CLI 59.19.1**. To use that version
+without a global install, replace `vercel` with
+`npm exec --yes --package vercel@59.19.1 -- vercel`. Version 59.20.0 returned
+`Not authorized` during this session despite successful read-only account/project
+checks; retrying the same deployment with 59.19.1 succeeded.
+
 The Vercel helper validates the linked project name and Hobby plan, copies only
 runtime values as encrypted production variables, and enables public deployment
 access. It never uploads the Vapi private management key. The browser configuration
